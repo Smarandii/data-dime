@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DataDime Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #savedReports {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="username"></h1>
+    <p id="membershipStatus"></p>
+
+    <div id="savedReports">
+        <h2>Saved Reports</h2>
+        <ul id="reportList"></ul>
+    </div>
+
+    <script>
+        // Sample data
+        var userData = {
+            username: "JohnDoe123",
+            membershipStatus: "Paid",
+            savedReports: ["Report 1", "Report 2", "Report 3"]
+        };
+
+        // Set username and membership status
+        document.getElementById("username").innerText = "Username: " + userData.username;
+        document.getElementById("membershipStatus").innerText = "Membership Status: " + userData.membershipStatus;
+
+        // Add saved reports to the list
+        var reportList = document.getElementById("reportList");
+        for (var i = 0; i < userData.savedReports.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.innerText = userData.savedReports[i];
+            reportList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

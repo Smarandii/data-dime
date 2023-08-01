@@ -1,0 +1,42 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+docs/_build/
+env/
+venv/
+ENV/
+*.sqlite3
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# Docker
+Dockerfile
+.dockerignore
+*.dockerfile
+docker-compose.yml
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
