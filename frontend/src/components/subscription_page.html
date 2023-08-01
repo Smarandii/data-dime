@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DataDime Premium Subscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #premiumOption {
+            border: 1px solid black;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="premiumOption">
+        <h2>Premium - $10/month</h2>
+        <p>Unlimited reports</p>
+
+        <form id="paymentForm">
+            <h2>Enter Your Payment Information</h2>
+
+            <label for="cardNumber">Card Number:</label><br>
+            <input type="text" id="cardNumber" name="cardNumber"><br>
+
+            <label for="expiryDate">Expiry Date:</label><br>
+            <input type="text" id="expiryDate" name="expiryDate"><br>
+
+            <label for="cvc">CVC:</label><br>
+            <input type="text" id="cvc" name="cvc"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            alert("Payment submitted");
+        });
+    </script>
+</body>
+</html>
