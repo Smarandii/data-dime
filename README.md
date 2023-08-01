@@ -1,5 +1,7 @@
 # DataDime - Your Personal Bank Transaction Analyzer
 
+Project board: https://www.notion.so/a4c00ed6d19542d6aeeab591a7cba87d?v=ecaba0cfa7a64c78a3fa7bd57a4010a2
+
 ## Description
 
 DataDime (DD) is a Python web application that enables users to analyze their bank transactions and generate insightful reports. The application accepts a .csv file of transactions, processes the data, and creates an easily digestible report. DD provides a unique service for both free and paid users, with expanded capabilities for the latter.
