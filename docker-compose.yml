@@ -5,9 +5,9 @@ services:
     ports:
       - 5416:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: postgres
+      POSTGRES_USER: dimeadmin
+      POSTGRES_PASSWORD: qweasdzxc123
+      POSTGRES_DB: dimedb
     volumes:
       - /db/data-dime:/var/lib/postgresql/data
 
