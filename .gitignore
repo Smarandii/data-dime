@@ -26,11 +26,6 @@ local_settings.py
 db.sqlite3
 media
 
-# Docker
-Dockerfile
-.dockerignore
-*.dockerfile
-docker-compose.yml
 
 # Jupyter Notebook
 .ipynb_checkpoints
