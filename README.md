@@ -33,4 +33,4 @@ DataDime (DD) is a Python web application that enables users to analyze their ba
 
 ## License
 
-*Your chosen License. For example:* [MIT](https://choosealicense.com/licenses/mit/)
+*GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007*

@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:9.6.23-alpine3.14
+    ports:
+      - 5416:5432
+    environment:
+      POSTGRES_USER: dimeadmin
+      POSTGRES_PASSWORD: qweasdzxc123
+      POSTGRES_DB: dimedb
+    volumes:
+      - /db/data-dime:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
