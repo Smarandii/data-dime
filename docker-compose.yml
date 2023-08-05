@@ -5,6 +5,8 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d
     environment:
-      POSTGRES_DB: yourdbname
-      POSTGRES_USER: youruser
-      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
