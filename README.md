@@ -1,5 +1,6 @@
 # DataDime - Your Personal Bank Transaction Analyzer
 
+Currently in development, to see progress you can visit:
 Project board: https://www.notion.so/a4c00ed6d19542d6aeeab591a7cba87d?v=ecaba0cfa7a64c78a3fa7bd57a4010a2
 
 ## Description
