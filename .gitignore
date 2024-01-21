@@ -1,4 +1,5 @@
 # .gitignore
+./db/data-dime/*
 
 # Python
 __pycache__/
