@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'auth_service'
 ]
 
 MIDDLEWARE = [
@@ -84,6 +86,8 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+AUTH_USER_MODEL = 'auth_service.CustomUser'
 
 
 # Password validation
