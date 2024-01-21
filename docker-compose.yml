@@ -1,15 +1,26 @@
 version: '3.1'
 services:
   db:
-    image: postgres:9.6.23-alpine3.14
+    image: postgres:13.13-bullseye
     ports:
       - 5416:5432
     environment:
       POSTGRES_USER: dimeadmin
       POSTGRES_PASSWORD: qweasdzxc123
-      POSTGRES_DB: dimedb
+      POSTGRES_DB: dime-app
+      SUPERADMIN_USERNAME: ${SUPERADMIN_USERNAME}
+      SUPERADMIN_PASSWORD: ${SUPERADMIN_PASSWORD}
+      SUPERADMIN_EMAIL: ${SUPERADMIN_EMAIL}
+      SUPERADMIN_SUBSCRIPTION_STATUS: ${SUPERADMIN_SUBSCRIPTION_STATUS}
     volumes:
-      - /db/data-dime:/var/lib/postgresql/data
+      - ./db/data-dime:/var/lib/postgresql/data
+      - ./db/:/docker-entrypoint-initdb.d
+    env_file:
+      - .env
+
+  auth-service:
+    image: python:alpine3.19
+
 
 volumes:
   postgres_data:
