@@ -1,0 +1,4 @@
+bcrypt
+Django
+djangorestframework
+psycopg2-binary

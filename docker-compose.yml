@@ -3,24 +3,39 @@ services:
   db:
     image: postgres:13.13-bullseye
     ports:
-      - 5416:5432
+      - "5416:5432"
     environment:
       POSTGRES_USER: dimeadmin
       POSTGRES_PASSWORD: qweasdzxc123
       POSTGRES_DB: dime-app
-      SUPERADMIN_USERNAME: ${SUPERADMIN_USERNAME}
-      SUPERADMIN_PASSWORD: ${SUPERADMIN_PASSWORD}
-      SUPERADMIN_EMAIL: ${SUPERADMIN_EMAIL}
-      SUPERADMIN_SUBSCRIPTION_STATUS: ${SUPERADMIN_SUBSCRIPTION_STATUS}
     volumes:
-      - ./db/data-dime:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
       - ./db/:/docker-entrypoint-initdb.d
     env_file:
       - .env
 
   auth-service:
-    image: python:alpine3.19
-
+    build:
+      context: .
+      dockerfile: ./auth-service/docker/test/Dockerfile
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      APPLICATION_ADMIN_PW_HASH: ${APPLICATION_ADMIN_PW_HASH}
+      PPLICATION_ADMIN_USERNAME: ${APPLICATION_ADMIN_USERNAME}
+      APPLICATION_ADMIN_EMAIL: ${APPLICATION_ADMIN_EMAIL}
+      APPLICATION_ADMIN_SUBSCRIPTION_STATUS: ${APPLICATION_ADMIN_SUBSCRIPTION_STATUS}
+      SALT: ${SALT}
+    depends_on:
+      - db
+    volumes:
+      - ./auth-service:/app/
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    env_file:
+      - .env
 
 volumes:
   postgres_data:
